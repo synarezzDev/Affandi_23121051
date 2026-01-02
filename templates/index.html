@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EduSmart AI | Affandi 23121051</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+    <link rel="stylesheet" href="/static/style.css" />
+</head>
+
+<body class="overflow-x-hidden">
+
+    <div id="splash" class="fixed inset-0 z-[100] bg-slate-950 flex flex-col items-center justify-center text-white">
+        <div class="text-center animate-pulse">
+            <h1 class="text-5xl md:text-7xl font-extrabold tracking-tighter name-glow italic">AFFANDI</h1>
+            <p class="text-indigo-500 font-bold tracking-[0.5em] mt-2 text-xl">23121051</p>
+        </div>
+        <div class="mt-12 w-32 h-1 bg-slate-800 rounded-full overflow-hidden">
+            <div class="h-full bg-indigo-500 w-1/2 animate-[load_2s_infinite]"></div>
+        </div>
+        <style>
+            @keyframes load {
+                0% {
+                    transform: translateX(-100%);
+                }
+
+                100% {
+                    transform: translateX(200%);
+                }
+            }
+        </style>
+    </div>
+
+    <nav class="fixed top-0 w-full z-50 glass-nav px-6 py-4">
+        <div class="max-w-7xl mx-auto flex justify-between items-center">
+            <div class="flex items-center gap-2 font-bold cursor-pointer" onclick="showSection('home')">
+                <i class="fas fa-brain text-indigo-600 text-2xl"></i>
+                <span class="text-xl tracking-tight">SmartAI <span class="text-indigo-600 italic">PRO</span></span>
+            </div>
+            <div class="flex items-center gap-6">
+                <button onclick="showSection('workspace')"
+                    class="px-5 py-2 bg-slate-900 text-white dark:bg-white dark:text-slate-900 rounded-xl font-bold text-sm shadow-lg active:scale-95 transition">Workspace</button>
+                <button onclick="showSection('about')"
+                    class="hidden md:block hover:text-indigo-600 transition text-slate-500 font-semibold text-sm">About</button>
+                <button onclick="toggleDarkMode()"
+                    class="text-xl p-2 rounded-full hover:bg-slate-200 dark:hover:bg-slate-800 transition">
+                    <i class="fas fa-sun text-yellow-500 hidden" id="sun-icon"></i>
+                    <i class="fas fa-moon text-slate-600" id="moon-icon"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <section id="home-section" class="min-h-screen pt-40 px-6 flex flex-col items-center text-center">
+        <div
+            class="px-4 py-1 rounded-full border border-indigo-200 bg-indigo-50 text-indigo-600 text-[10px] font-bold mb-8 tracking-widest uppercase">
+            UAS - INTEGRATE APPLICATION WITH AI
+        </div>
+        <h1 class="text-5xl md:text-8xl font-extrabold tracking-tighter mb-6 leading-none">
+            Learning <span class="text-indigo-600">Assistant.</span>
+        </h1>
+        <p class="text-slate-500 max-w-xl mb-12 dark:text-slate-400 font-medium">
+            Dikembangkan oleh <strong>Affandi (NIM: 23121051)</strong>. Solusi pintar meringkas dan memetakan materi
+            kuliah secara instan.
+        </p>
+        <button onclick="showSection('workspace')"
+            class="bg-indigo-600 text-white px-10 py-5 rounded-2xl font-bold text-lg shadow-xl shadow-indigo-200 hover:bg-indigo-700 transition">Mulai
+            Sekarang</button>
+    </section>
+
+    <section id="about-section"
+        class="hidden fade-in py-20 px-6 bg-white dark:bg-slate-900 transition-colors duration-500 min-h-screen pt-32">
+        <div class="max-w-5xl mx-auto flex flex-col md:flex-row items-center gap-12">
+            <div class="flex-1">
+                <div class="relative inline-block mb-6">
+                    <div class="absolute inset-0 bg-indigo-600 blur-2xl opacity-20 rounded-full"></div>
+                    <i class="fas fa-user-graduate text-5xl text-indigo-600 relative"></i>
+                </div>
+                <h2 class="text-3xl md:text-5xl font-extrabold mb-6 tracking-tight">Tentang Pengembang</h2>
+                <div class="space-y-4 text-slate-500 dark:text-slate-400 font-medium leading-relaxed">
+                    <p>
+                        Aplikasi <strong>SmartAI Pro</strong> ini dikembangkan oleh <strong>Affandi</strong>, dengan <strong>NIM 23121051</strong>, sebagai bagian dari pemenuhan tugas
+                        Ujian Akhir Semester (UAS)
+                    </p>
+                    <p>
+                        Proyek ini bertujuan untuk mendemonstrasikan integrasi sistem web modern menggunakan framework
+                        <strong>Flask</strong> dengan teknologi kecerdasan buatan mutakhir dari <strong>Google Gemini
+                            1.5 Flash</strong> untuk membantu efisiensi belajar mahasiswa.<strong> dan membantu mahasiswa memahami materi kuliah dengan lebih baik</strong>
+                    </p>
+                </div>
+                <div class="mt-8 grid grid-cols-2 gap-4">
+                    <div
+                        class="p-4 rounded-2xl border border-slate-100 dark:border-slate-800 bg-slate-50 dark:bg-slate-800/50">
+                        <span class="block text-2xl font-bold text-indigo-600">2026</span>
+                        <span class="text-[10px] font-bold uppercase text-slate-400">Tahun Pengembangan</span>
+                    </div>
+                    <div
+                        class="p-4 rounded-2xl border border-slate-100 dark:border-slate-800 bg-slate-50 dark:bg-slate-800/50">
+                        <span class="block text-2xl font-bold text-indigo-600">v3.0</span>
+                        <span class="text-[10px] font-bold uppercase text-slate-400">Versi Aplikasi</span>
+                    </div>
+                </div>
+            </div>
+            <div class="flex-1 relative">
+                <div
+                    class="absolute -inset-4 bg-gradient-to-tr from-indigo-500 to-purple-500 rounded-[3rem] opacity-10 blur-2xl">
+                </div>
+                <div class="modern-card p-8 relative overflow-hidden text-center">
+                    <div
+                        class="w-24 h-24 bg-indigo-100 dark:bg-slate-800 text-indigo-600 rounded-full flex items-center justify-center text-3xl mx-auto mb-6 border-4 border-white dark:border-slate-900 shadow-xl">
+                        <i class="fas fa-id-badge"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-1">Affandi</h3>
+                    <p class="text-indigo-600 text-sm font-bold mb-4 uppercase tracking-widest">NIM: 23121051</p>
+                    <div class="flex justify-center gap-3">
+                        <span
+                            class="px-3 py-1 bg-slate-100 dark:bg-slate-800 rounded-full text-[10px] font-bold">Python</span>
+                        <span
+                            class="px-3 py-1 bg-slate-100 dark:bg-slate-800 rounded-full text-[10px] font-bold">Flask</span>
+                        <span class="px-3 py-1 bg-slate-100 dark:bg-slate-800 rounded-full text-[10px] font-bold">AI
+                            API</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="workspace-section" class="hidden min-h-screen pt-32 pb-20 px-4 max-w-6xl mx-auto">
+        <div class="flex flex-col lg:flex-row gap-8">
+            <aside class="w-full lg:w-72 space-y-4">
+                <div class="modern-card p-6 space-y-3">
+                    <h3 class="text-[10px] font-bold text-slate-400 uppercase tracking-widest mb-4">AI Tools</h3>
+                    <button onclick="setMode('summarize')" id="m-sum"
+                        class="w-full flex items-center gap-4 p-4 rounded-2xl sidebar-active font-bold transition-all"><i
+                            class="fas fa-align-left"></i> Summary</button>
+                    <button onclick="setMode('mindmap')" id="m-mind"
+                        class="w-full flex items-center gap-4 p-4 rounded-2xl text-slate-500 font-bold hover:bg-slate-100 dark:hover:bg-slate-800 transition-all"><i
+                            class="fas fa-project-diagram"></i> Mind Map</button>
+                    <button onclick="setMode('quiz')" id="m-quiz"
+                        class="w-full flex items-center gap-4 p-4 rounded-2xl text-slate-500 font-bold hover:bg-slate-100 dark:hover:bg-slate-800 transition-all"><i
+                            class="fas fa-tasks"></i> AI Quiz</button>
+                </div>
+                <div class="bg-indigo-600 p-6 rounded-[2rem] text-white shadow-lg">
+                    <p class="text-[10px] font-bold opacity-70 uppercase mb-1">Developer</p>
+                    <p class="font-extrabold text-lg leading-tight uppercase">Affandi</p>
+                    <p class="text-xs font-bold opacity-70 mt-2 italic">NIM: 23121051</p>
+                </div>
+            </aside>
+
+            <div class="flex-1 space-y-6">
+                <div class="modern-card p-8">
+                    <h2 class="text-2xl font-extrabold mb-6" id="workspace-title">Smart Summary</h2>
+                    <textarea id="inputText"
+                        class="w-full min-h-[250px] bg-slate-50 dark:bg-slate-800 rounded-2xl p-6 border-none outline-none text-lg resize-none placeholder:text-slate-400 dark:text-white transition"
+                        placeholder="Masukkan materi Anda di sini..."></textarea>
+                    <div class="mt-6 flex justify-end">
+                        <button onclick="processAI()"
+                            class="bg-indigo-600 text-white px-8 py-4 rounded-2xl font-bold shadow-lg hover:bg-indigo-700 transition active:scale-95 flex items-center gap-3">
+                            <i class="fas fa-bolt"></i> Eksekusi AI
+                        </button>
+                    </div>
+                </div>
+
+                <div id="loader" class="hidden text-center py-10">
+                    <div class="inline-block w-12 h-1.5 rounded-full loading-shimmer mb-4"></div>
+                    <p class="text-sm font-bold text-indigo-600 animate-pulse tracking-widest uppercase">Affandi's AI is
+                        working...</p>
+                </div>
+
+                <div id="resultBox" class="hidden">
+                    <div class="modern-card p-8 md:p-12 relative border-t-4 border-indigo-600">
+                        <div class="flex justify-between items-center mb-8">
+                            <span
+                                class="text-[10px] font-bold bg-indigo-50 text-indigo-600 px-3 py-1 rounded-full uppercase">AI
+                                Content by 23121051</span>
+                            <div class="flex gap-2">
+                                <button onclick="copyToClipboard()"
+                                    class="w-10 h-10 rounded-xl border border-slate-200 flex items-center justify-center hover:bg-slate-100 transition dark:bg-slate-800 dark:text-white"><i
+                                        class="fas fa-copy"></i></button>
+                                <button onclick="exportToPDF()"
+                                    class="w-10 h-10 rounded-xl bg-indigo-600 text-white flex items-center justify-center hover:bg-indigo-700 transition shadow-lg"><i
+                                        class="fas fa-file-pdf"></i></button>
+                            </div>
+                        </div>
+                        <div id="output"
+                            class="prose prose-indigo max-w-none text-lg dark:text-slate-300 leading-relaxed"></div>
+                        <div id="mindmap-container"
+                            class="mt-8 p-6 bg-white rounded-3xl overflow-auto border border-slate-100 hidden"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        let currentMode = 'summarize';
+        let isDarkMode = false;
+
+        window.onload = () => {
+            setTimeout(() => {
+                const splash = document.getElementById('splash');
+                splash.style.opacity = '0';
+                setTimeout(() => splash.style.display = 'none', 800);
+            }, 2500);
+            mermaid.initialize({ startOnLoad: false, theme: 'neutral', securityLevel: 'loose' });
+        };
+
+        function toggleDarkMode() {
+            isDarkMode = !isDarkMode;
+            document.body.classList.toggle('dark-mode');
+            document.getElementById('sun-icon').classList.toggle('hidden');
+            document.getElementById('moon-icon').classList.toggle('hidden');
+        }
+
+        function showSection(sec) {
+            ['home', 'workspace', 'about'].forEach(s => {
+                const el = document.getElementById(s + '-section');
+                if (el) el.classList.add('hidden');
+            });
+            document.getElementById(sec + '-section').classList.remove('hidden');
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+        function setMode(m) {
+            currentMode = m;
+            document.getElementById('workspace-title').innerText = m === 'summarize' ? 'Smart Summary' : m === 'mindmap' ? 'Mind Matrix' : 'AI Quiz Pro';
+            ['sum', 'mind', 'quiz'].forEach(id => {
+                const btn = document.getElementById('m-' + id);
+                btn.classList.remove('sidebar-active');
+                btn.classList.add('text-slate-500');
+            });
+            const activeId = m === 'summarize' ? 'sum' : m === 'mindmap' ? 'mind' : 'quiz';
+            document.getElementById('m-' + activeId).classList.add('sidebar-active');
+            document.getElementById('m-' + activeId).classList.remove('text-slate-500');
+        }
+
+        async function processAI() {
+            const input = document.getElementById('inputText').value;
+            if (!input) return alert("Materi kosong!");
+            document.getElementById('loader').classList.remove('hidden');
+            document.getElementById('resultBox').classList.add('hidden');
+            try {
+                const res = await fetch('/process', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ text: input, mode: currentMode })
+                });
+                const data = await res.json();
+                document.getElementById('loader').classList.add('hidden');
+                document.getElementById('resultBox').classList.remove('hidden');
+                const out = document.getElementById('output');
+                const mm = document.getElementById('mindmap-container');
+                if (currentMode === 'mindmap') {
+                    out.innerHTML = "<p class='italic opacity-50 text-center mb-4'>Konsep visual diproses...</p>";
+                    mm.classList.remove('hidden');
+                    const graph = data.result.replace(/```mermaid/g, "").replace(/```/g, "").trim();
+                    const { svg } = await mermaid.render('mermaid-svg', graph);
+                    mm.innerHTML = svg;
+                } else {
+                    mm.classList.add('hidden');
+                    out.innerHTML = data.result.replace(/\n/g, '<br>').replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
+                }
+            } catch (e) {
+                document.getElementById('loader').classList.add('hidden');
+                alert("Error koneksi!");
+            }
+        }
+
+        function copyToClipboard() {
+            navigator.clipboard.writeText(document.getElementById('output').innerText);
+            alert("Disalin!");
+        }
+
+        function exportToPDF() {
+            const element = document.getElementById('output');
+            html2pdf().set({ margin: 1, filename: 'SmartAI-Affandi-23121051.pdf' }).from(element).save();
+        }
+    </script>
+</body>
+
+</html>
